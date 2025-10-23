@@ -34,6 +34,8 @@
         docker run --name ubuntu-novnc \
           --shm-size 1g -d \
           --cap-add=SYS_ADMIN \
+          --device /dev/kvm:/dev/kvm \
+          -v /home/user/ubuntu_data:/home/user \
           -p 8080:10000 \
           -e VNC_PASSWD=12345678 \
           -e PORT=10000 \
